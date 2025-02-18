@@ -1,4 +1,6 @@
 /home/annguyen/claybot_ws/install/claybot/lib/claybot/vision
+/home/annguyen/claybot_ws/install/claybot/lib/claybot/listener
+/home/annguyen/claybot_ws/install/claybot/lib/claybot/talker
 /home/annguyen/claybot_ws/install/claybot/share/ament_index/resource_index/package_run_dependencies/claybot
 /home/annguyen/claybot_ws/install/claybot/share/ament_index/resource_index/parent_prefix_path/claybot
 /home/annguyen/claybot_ws/install/claybot/share/claybot/environment/ament_prefix_path.sh

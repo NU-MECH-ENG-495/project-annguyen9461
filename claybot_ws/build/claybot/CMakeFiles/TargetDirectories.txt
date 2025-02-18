@@ -1,6 +1,8 @@
 /home/annguyen/claybot_ws/build/claybot/CMakeFiles/uninstall.dir
 /home/annguyen/claybot_ws/build/claybot/CMakeFiles/claybot_uninstall.dir
 /home/annguyen/claybot_ws/build/claybot/CMakeFiles/vision.dir
+/home/annguyen/claybot_ws/build/claybot/CMakeFiles/listener.dir
+/home/annguyen/claybot_ws/build/claybot/CMakeFiles/talker.dir
 /home/annguyen/claybot_ws/build/claybot/CMakeFiles/test.dir
 /home/annguyen/claybot_ws/build/claybot/CMakeFiles/edit_cache.dir
 /home/annguyen/claybot_ws/build/claybot/CMakeFiles/rebuild_cache.dir

@@ -10,14 +10,27 @@ find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
+
 
 add_executable(vision src/vision.cpp)
 target_include_directories(vision PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
 target_compile_features(vision PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+ament_target_dependencies(vision rclcpp std_msgs)  # Ensure ROS2 dependencies
 
-install(TARGETS vision
+add_executable(listener src/subscriber_lambda_function.cpp)
+ament_target_dependencies(listener rclcpp std_msgs)
+add_executable(talker src/publisher_lambda_function.cpp)
+ament_target_dependencies(talker rclcpp std_msgs)
+
+# Install targets
+install(TARGETS 
+  vision 
+  listener
+  talker
   DESTINATION lib/${PROJECT_NAME})
 
 if(BUILD_TESTING)
