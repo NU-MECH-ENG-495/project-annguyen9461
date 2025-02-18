@@ -4,7 +4,7 @@
 This project automates the process of cutting a **2D circle** into a predefined goal shape using **computer vision** and a **fixed knife attached to a linear actuator**.  
 
 ### Goal Shapes  
-- **House (simple outline)**  
+- **Triangle**  
 - **Hexagon**  
 - **Square**  
 
