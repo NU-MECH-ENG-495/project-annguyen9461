@@ -26,12 +26,17 @@ ament_target_dependencies(listener rclcpp std_msgs)
 add_executable(talker src/publisher_lambda_function.cpp)
 ament_target_dependencies(talker rclcpp std_msgs)
 
-# Install targets
+# Install executables
 install(TARGETS 
   vision 
   listener
   talker
   DESTINATION lib/${PROJECT_NAME})
+# Install launch files
+install(
+  DIRECTORY launch
+  DESTINATION share/${PROJECT_NAME}
+)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

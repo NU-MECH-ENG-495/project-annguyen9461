@@ -1,6 +1,0 @@
-Invoking command in '/home/annguyen/claybot_ws/build/claybot_srvcli': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/annguyen/claybot_ws/src/claybot_srvcli -DCMAKE_INSTALL_PREFIX=/home/annguyen/claybot_ws/install/claybot_srvcli
-Invoked command in '/home/annguyen/claybot_ws/build/claybot_srvcli' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/annguyen/claybot_ws/src/claybot_srvcli -DCMAKE_INSTALL_PREFIX=/home/annguyen/claybot_ws/install/claybot_srvcli
-Invoking command in '/home/annguyen/claybot_ws/build/claybot_srvcli': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/annguyen/claybot_ws/build/claybot_srvcli -- -j32 -l32
-Invoked command in '/home/annguyen/claybot_ws/build/claybot_srvcli' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/annguyen/claybot_ws/build/claybot_srvcli -- -j32 -l32
-Invoking command in '/home/annguyen/claybot_ws/build/claybot_srvcli': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/annguyen/claybot_ws/build/claybot_srvcli
-Invoked command in '/home/annguyen/claybot_ws/build/claybot_srvcli' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/annguyen/claybot_ws/build/claybot_srvcli

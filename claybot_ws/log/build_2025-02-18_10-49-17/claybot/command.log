@@ -1,4 +1,0 @@
-Invoking command in '/home/annguyen/claybot_ws/build/claybot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/annguyen/claybot_ws/build/claybot -- -j32 -l32
-Invoked command in '/home/annguyen/claybot_ws/build/claybot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/annguyen/claybot_ws/build/claybot -- -j32 -l32
-Invoking command in '/home/annguyen/claybot_ws/build/claybot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/annguyen/claybot_ws/build/claybot
-Invoked command in '/home/annguyen/claybot_ws/build/claybot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/annguyen/claybot_ws/build/claybot
