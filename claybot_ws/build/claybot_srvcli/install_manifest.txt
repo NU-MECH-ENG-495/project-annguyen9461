@@ -1,0 +1,17 @@
+/home/annguyen/claybot_ws/install/claybot_srvcli/lib/claybot_srvcli/server
+/home/annguyen/claybot_ws/install/claybot_srvcli/lib/claybot_srvcli/client
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/ament_index/resource_index/package_run_dependencies/claybot_srvcli
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/ament_index/resource_index/parent_prefix_path/claybot_srvcli
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/environment/ament_prefix_path.sh
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/environment/ament_prefix_path.dsv
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/environment/path.sh
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/environment/path.dsv
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/local_setup.bash
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/local_setup.sh
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/local_setup.zsh
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/local_setup.dsv
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/package.dsv
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/ament_index/resource_index/packages/claybot_srvcli
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/cmake/claybot_srvcliConfig.cmake
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/cmake/claybot_srvcliConfig-version.cmake
+/home/annguyen/claybot_ws/install/claybot_srvcli/share/claybot_srvcli/package.xml
