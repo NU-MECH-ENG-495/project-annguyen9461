@@ -1,3 +1,5 @@
 claybot_ws/build/*
 claybot_ws/install/*
 claybot_ws/log/*
+claybot_ws/venv/*
+frames_*
