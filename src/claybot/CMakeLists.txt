@@ -43,7 +43,7 @@ install(
 # Python scripts
 install(
   PROGRAMS 
-  scripts/bridger.py
+  scripts/yolo.py
   scripts/img_proc.py
   DESTINATION lib/${PROJECT_NAME}
 )
