@@ -1,5 +1,5 @@
-claybot_ws/build/*
-claybot_ws/install/*
-claybot_ws/log/*
-claybot_ws/venv/*
+build/*
+install/*
+log/*
+venv/*
 frames_*
