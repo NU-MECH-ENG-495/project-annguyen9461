@@ -43,8 +43,8 @@ install(
 # Python scripts
 install(
   PROGRAMS 
-  scripts/yolo.py
-  scripts/tracklet_visualizer.py
+  scripts/bridger.py
+  scripts/img_proc.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
