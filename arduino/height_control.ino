@@ -14,7 +14,7 @@
 
 const uint8_t STEP_PIN = 2;
 const uint8_t DIRECTION_PIN = 4;
-const uint32_t STEP_COUNT = 51200*2;
+const uint32_t STEP_COUNT = 51200;
 const uint16_t HALF_STEP_DURATION_MICROSECONDS = 100;
 const uint16_t STOP_DURATION = 1;
 const uint8_t RUN_CURRENT_PERCENT = 100;
@@ -28,6 +28,9 @@ void setup() {
 
   pinMode(STEP_PIN, OUTPUT);
   pinMode(DIRECTION_PIN, OUTPUT);
+  
+  // Set the direction permanently (HIGH for cw, or LOW for ccw)
+  digitalWrite(DIRECTION_PIN, LOW);
 
   stepper_driver.setRunCurrent(RUN_CURRENT_PERCENT);
   stepper_driver.enableCoolStep();
@@ -42,7 +45,7 @@ void loop() {
     digitalWrite(STEP_PIN, !digitalRead(STEP_PIN));
     delayMicroseconds(HALF_STEP_DURATION_MICROSECONDS);
   }
-  digitalWrite(DIRECTION_PIN, !digitalRead(DIRECTION_PIN));
+  // digitalWrite(DIRECTION_PIN, !digitalRead(DIRECTION_PIN));
   delay(STOP_DURATION);
 }
 
