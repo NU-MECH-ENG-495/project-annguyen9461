@@ -1,52 +1,73 @@
 #include <TMC2209.h>
-#include <SoftwareSerial.h>
+// #include <SoftwareSerial.h>  // Uncomment if you later need UART configuration
 
-// This example will not work on Arduino boards without HardwareSerial ports,
-// such as the Uno, Nano, and Mini.
-//
-// See this reference for more details:
-// https://www.arduino.cc/reference/en/language/functions/communication/serial/
-//
-// To make this library work with those boards, refer to this library example:
-// examples/UnidirectionalCommunication/SoftwareSerial
-// Create a SoftwareSerial instance on two digital pins (choose ones that support change interrupts, e.g., 10 and 11)
-// SoftwareSerial tmcSerial(10, 11); // (RX, TX)
-
+// Define pins and constants
 const uint8_t STEP_PIN = 2;
 const uint8_t DIRECTION_PIN = 4;
-const uint32_t STEP_COUNT = 51200;
-const uint16_t HALF_STEP_DURATION_MICROSECONDS = 100;
-const uint16_t STOP_DURATION = 1;
+const uint32_t STEPS_PER_COMMAND = 51200;  // Number of full steps per command
+const uint16_t STEP_INTERVAL_MICROS = 100; // Delay between each step toggle (microseconds)
 const uint8_t RUN_CURRENT_PERCENT = 100;
 
-// Instantiate TMC2209
+// Instantiate TMC2209 driver
 TMC2209 stepper_driver;
 
+// Global variables for non-blocking stepping
+volatile long stepsRemaining = 0;    // Total toggles remaining (each full step requires 2 toggles)
+unsigned long lastStepTime = 0;
+bool paused = false;                 // Pause state flag
+
 void setup() {
-  // Initialize the driver using SoftwareSerial
-  // stepper_driver.setup(tmcSerial);
+  Serial.begin(115200);
+  Serial.println("Press '1' to move up, '2' to move down, 'p' to toggle pause.");
 
   pinMode(STEP_PIN, OUTPUT);
   pinMode(DIRECTION_PIN, OUTPUT);
   
-  // Set the direction permanently (HIGH for cw, or LOW for ccw)
+  // Set a default direction
   digitalWrite(DIRECTION_PIN, LOW);
 
+  // Configure the stepper driver
   stepper_driver.setRunCurrent(RUN_CURRENT_PERCENT);
   stepper_driver.enableCoolStep();
   stepper_driver.enable();
-
-  // Start the SoftwareSerial communication at the desired baud rate
-  // tmcSerial.begin(115200);
 }
 
 void loop() {
-  for (uint32_t i = 0; i < STEP_COUNT * 2; ++i) {
-    digitalWrite(STEP_PIN, !digitalRead(STEP_PIN));
-    delayMicroseconds(HALF_STEP_DURATION_MICROSECONDS);
+  // Process serial input to change motion commands or pause
+  if (Serial.available() > 0) {
+    char input = Serial.read();
+    
+    if (input == '1') {
+      Serial.println("Key 1 pressed: Moving Up.");
+      digitalWrite(DIRECTION_PIN, HIGH);  // Set direction for "up" (adjust if needed)
+      stepsRemaining = STEPS_PER_COMMAND * 2; // Each full step requires 2 toggles
+    } 
+    else if (input == '2') {
+      Serial.println("Key 2 pressed: Moving Down.");
+      digitalWrite(DIRECTION_PIN, LOW);   // Set direction for "down"
+      stepsRemaining = STEPS_PER_COMMAND * 2;
+    } 
+    else if (input == 'p' || input == 'P') {
+      paused = !paused;
+      if (paused) {
+        Serial.println("Paused.");
+      } else {
+        Serial.println("Resumed.");
+      }
+    } 
+    else {
+      Serial.println("Invalid key. Please press '1', '2', or 'p'.");
+    }
   }
-  // digitalWrite(DIRECTION_PIN, !digitalRead(DIRECTION_PIN));
-  delay(STOP_DURATION);
+  
+  // Non-blocking stepping: only execute steps if not paused
+  if (!paused && stepsRemaining > 0) {
+    unsigned long currentTime = micros();
+    if (currentTime - lastStepTime >= STEP_INTERVAL_MICROS) {
+      // Toggle the STEP_PIN to generate a step pulse
+      digitalWrite(STEP_PIN, !digitalRead(STEP_PIN));
+      lastStepTime = currentTime;
+      stepsRemaining--;  // Count one toggle
+    }
+  }
 }
-
-//
