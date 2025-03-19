@@ -18,7 +18,7 @@ bool paused = false;                 // Pause state flag
 
 void setup() {
   Serial.begin(115200);
-  Serial.println("Press '1' to move up, '2' to move down, 'p' to toggle pause.");
+  Serial.println("Press 'u' to move up, 'd' to move down, 'p' to toggle pause.");
 
   pinMode(STEP_PIN, OUTPUT);
   pinMode(DIRECTION_PIN, OUTPUT);
@@ -37,17 +37,17 @@ void loop() {
   if (Serial.available() > 0) {
     char input = Serial.read();
     
-    if (input == '1') {
+    if (input == 'u') {
       Serial.println("Key 1 pressed: Moving Up.");
       digitalWrite(DIRECTION_PIN, HIGH);  // Set direction for "up" (adjust if needed)
       stepsRemaining = STEPS_PER_COMMAND * 2; // Each full step requires 2 toggles
     } 
-    else if (input == '2') {
+    else if (input == 'd') {
       Serial.println("Key 2 pressed: Moving Down.");
       digitalWrite(DIRECTION_PIN, LOW);   // Set direction for "down"
       stepsRemaining = STEPS_PER_COMMAND * 2;
     } 
-    else if (input == 'p' || input == 'P') {
+    else if (input == 'p') {
       paused = !paused;
       if (paused) {
         Serial.println("Paused.");
@@ -56,7 +56,7 @@ void loop() {
       }
     } 
     else {
-      Serial.println("Invalid key. Please press '1', '2', or 'p'.");
+      Serial.println("Invalid key. Please press 'u', 'd', or 'p'.");
     }
   }
   
