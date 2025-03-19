@@ -45,6 +45,7 @@ install(
   PROGRAMS 
   scripts/yolo.py
   scripts/img_proc.py
+  scripts/arduino_comm.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
