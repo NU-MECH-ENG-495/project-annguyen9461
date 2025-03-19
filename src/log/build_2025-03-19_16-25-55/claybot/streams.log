@@ -1,0 +1,301 @@
+[0.006s] Invoking command in '/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/build/claybot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot -DCMAKE_INSTALL_PREFIX=/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/install/claybot
+[0.045s] -- The C compiler identification is GNU 13.2.0
+[0.088s] -- The CXX compiler identification is GNU 13.2.0
+[0.108s] -- Detecting C compiler ABI info
+[0.221s] -- Detecting C compiler ABI info - done
+[0.235s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.235s] -- Detecting C compile features
+[0.236s] -- Detecting C compile features - done
+[0.246s] -- Detecting CXX compiler ABI info
+[0.353s] -- Detecting CXX compiler ABI info - done
+[0.362s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.362s] -- Detecting CXX compile features
+[0.363s] -- Detecting CXX compile features - done
+[0.366s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.455s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.518s] -- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.545s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.554s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.563s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.574s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.619s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.621s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.697s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.713s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.726s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.768s] -- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.776s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.798s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[0.807s] -- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[0.864s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.864s] RegularExpression::compile(): Nested *?+.
+[0.865s] RegularExpression::compile(): Error in compile.
+[0.865s] RegularExpression::compile(): Nested *?+.
+[0.865s] RegularExpression::compile(): Error in compile.
+[0.865s] RegularExpression::compile(): Nested *?+.
+[0.865s] RegularExpression::compile(): Error in compile.
+[0.865s] RegularExpression::compile(): Nested *?+.
+[0.865s] RegularExpression::compile(): Error in compile.
+[0.865s] RegularExpression::compile(): Nested *?+.
+[0.865s] RegularExpression::compile(): Error in compile.
+[0.865s] RegularExpression::compile(): Nested *?+.
+[0.865s] RegularExpression::compile(): Error in compile.
+[0.865s] RegularExpression::compile(): Nested *?+.
+[0.865s] RegularExpression::compile(): Error in compile.
+[0.866s] RegularExpression::compile(): Nested *?+.
+[0.866s] RegularExpression::compile(): Error in compile.
+[0.866s] RegularExpression::compile(): Nested *?+.
+[0.866s] RegularExpression::compile(): Error in compile.
+[0.866s] RegularExpression::compile(): Nested *?+.
+[0.866s] RegularExpression::compile(): Error in compile.
+[0.866s] RegularExpression::compile(): Nested *?+.
+[0.866s] RegularExpression::compile(): Error in compile.
+[0.866s] RegularExpression::compile(): Nested *?+.
+[0.866s] RegularExpression::compile(): Error in compile.
+[0.866s] RegularExpression::compile(): Nested *?+.
+[0.866s] RegularExpression::compile(): Error in compile.
+[0.866s] RegularExpression::compile(): Nested *?+.
+[0.866s] RegularExpression::compile(): Error in compile.
+[0.866s] RegularExpression::compile(): Nested *?+.
+[0.867s] RegularExpression::compile(): Error in compile.
+[0.867s] RegularExpression::compile(): Nested *?+.
+[0.867s] RegularExpression::compile(): Error in compile.
+[0.867s] RegularExpression::compile(): Nested *?+.
+[0.867s] RegularExpression::compile(): Error in compile.
+[0.867s] RegularExpression::compile(): Nested *?+.
+[0.867s] RegularExpression::compile(): Error in compile.
+[0.867s] RegularExpression::compile(): Nested *?+.
+[0.867s] RegularExpression::compile(): Error in compile.
+[0.867s] RegularExpression::compile(): Nested *?+.
+[0.867s] RegularExpression::compile(): Error in compile.
+[0.867s] -- Configured cppcheck include dirs: 
+[0.867s] -- Configured cppcheck exclude dirs and/or files: 
+[0.867s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.867s] -- Configured 'flake8' exclude dirs and/or files: 
+[0.868s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.868s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.868s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.868s] Call Stack (most recent call first):
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.868s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.868s]   CMakeLists.txt:63 (ament_package)
+[0.868s] 
+[0.868s] [0m
+[0.868s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.868s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.868s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.868s] Call Stack (most recent call first):
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.868s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.868s]   CMakeLists.txt:63 (ament_package)
+[0.868s] 
+[0.868s] [0m
+[0.868s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.868s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.868s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.868s] Call Stack (most recent call first):
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.868s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.868s]   CMakeLists.txt:63 (ament_package)
+[0.868s] 
+[0.868s] [0m
+[0.868s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.868s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.868s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.868s] Call Stack (most recent call first):
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.868s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.868s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.868s]   CMakeLists.txt:63 (ament_package)
+[0.869s] 
+[0.869s] [0m
+[0.869s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.869s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.869s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.869s] Call Stack (most recent call first):
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.869s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.869s]   CMakeLists.txt:63 (ament_package)
+[0.869s] 
+[0.869s] [0m
+[0.869s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.869s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.869s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.869s] Call Stack (most recent call first):
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.869s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.869s]   CMakeLists.txt:63 (ament_package)
+[0.869s] 
+[0.869s] [0m
+[0.869s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.869s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.869s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.869s] Call Stack (most recent call first):
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.869s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.869s]   CMakeLists.txt:63 (ament_package)
+[0.869s] 
+[0.869s] [0m
+[0.869s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.869s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.869s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.869s] Call Stack (most recent call first):
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.869s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.869s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.869s]   CMakeLists.txt:63 (ament_package)
+[0.869s] 
+[0.869s] [0m
+[0.870s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.870s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.870s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.870s] Call Stack (most recent call first):
+[0.870s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.870s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.870s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.870s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.870s]   CMakeLists.txt:63 (ament_package)
+[0.870s] 
+[0.870s] [0m
+[0.870s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.870s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.870s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.870s] Call Stack (most recent call first):
+[0.870s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.870s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.870s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.870s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.870s]   CMakeLists.txt:63 (ament_package)
+[0.870s] 
+[0.870s] [0m
+[0.870s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.870s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.870s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.870s] Call Stack (most recent call first):
+[0.870s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.870s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.871s]   CMakeLists.txt:63 (ament_package)
+[0.871s] 
+[0.871s] [0m
+[0.871s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.871s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.871s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.871s] Call Stack (most recent call first):
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.871s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.871s]   CMakeLists.txt:63 (ament_package)
+[0.871s] 
+[0.871s] [0m
+[0.871s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.871s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.871s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.871s] Call Stack (most recent call first):
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.871s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.871s]   CMakeLists.txt:63 (ament_package)
+[0.871s] 
+[0.871s] [0m
+[0.871s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.871s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.871s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.871s] Call Stack (most recent call first):
+[0.871s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.872s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.872s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.872s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.872s]   CMakeLists.txt:63 (ament_package)
+[0.872s] 
+[0.872s] [0m
+[0.872s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.872s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.872s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.872s] Call Stack (most recent call first):
+[0.872s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.872s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.872s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.872s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.872s]   CMakeLists.txt:63 (ament_package)
+[0.872s] 
+[0.872s] [0m
+[0.872s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.872s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.872s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.872s] Call Stack (most recent call first):
+[0.872s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.872s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.872s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.872s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.872s]   CMakeLists.txt:63 (ament_package)
+[0.872s] 
+[0.872s] [0m
+[0.872s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.872s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.872s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.873s] Call Stack (most recent call first):
+[0.873s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.873s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.873s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.873s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.881s]   CMakeLists.txt:63 (ament_package)
+[0.881s] 
+[0.881s] [0m
+[0.881s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.881s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.881s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.881s] Call Stack (most recent call first):
+[0.881s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.881s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.881s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.881s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.881s]   CMakeLists.txt:63 (ament_package)
+[0.881s] 
+[0.881s] [0m
+[0.881s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:73 (string):
+[0.882s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.882s]   "^/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*".
+[0.882s] Call Stack (most recent call first):
+[0.882s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.882s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.882s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.882s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.882s]   CMakeLists.txt:63 (ament_package)
+[0.882s] 
+[0.882s] [0m
+[0.882s] [31mCMake Error at /opt/ros/jazzy/share/ament_cmake_cppcheck/cmake/ament_cmake_cppcheck_lint_hook.cmake:75 (string):
+[0.882s]   string sub-command REGEX, mode MATCH failed to compile regex
+[0.882s]   "^\$<.*:/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot/.*>$".
+[0.882s] Call Stack (most recent call first):
+[0.882s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.882s]   /opt/ros/jazzy/share/ament_lint_auto/cmake/ament_lint_auto_package_hook.cmake:21 (ament_execute_extensions)
+[0.882s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_execute_extensions.cmake:48 (include)
+[0.882s]   /opt/ros/jazzy/share/ament_cmake_core/cmake/core/ament_package.cmake:66 (ament_execute_extensions)
+[0.882s]   CMakeLists.txt:63 (ament_package)
+[0.882s] 
+[0.882s] [0m
+[0.886s] -- Added test 'lint_cmake' to check CMake code style
+[0.886s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.886s] -- Added test 'uncrustify' to check C / C++ code style
+[0.886s] -- Configured uncrustify additional arguments: 
+[0.886s] -- Added test 'xmllint' to check XML markup files
+[0.888s] -- Configuring incomplete, errors occurred!
+[0.888s] Invoked command in '/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/build/claybot' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/claybot -DCMAKE_INSTALL_PREFIX=/home/annguyen/classes/c++/project-annguyen9461/ros2_ws/src/install/claybot
