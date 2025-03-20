@@ -24,16 +24,14 @@ target_include_directories(vision PUBLIC
 target_compile_features(vision PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 ament_target_dependencies(vision rclcpp std_msgs)  # Ensure ROS2 dependencies
 
-add_executable(listener src/subscriber_lambda_function.cpp)
-ament_target_dependencies(listener rclcpp std_msgs)
-add_executable(talker src/publisher_lambda_function.cpp)
-ament_target_dependencies(talker rclcpp std_msgs)
+# add_executable(listener src/subscriber_lambda_function.cpp)
+# ament_target_dependencies(listener rclcpp std_msgs)
+# add_executable(talker src/publisher_lambda_function.cpp)
+# ament_target_dependencies(talker rclcpp std_msgs)
 
 # Install executables
 install(TARGETS 
   vision 
-  listener
-  talker
   DESTINATION lib/${PROJECT_NAME})
 # Install launch files
 install(
@@ -43,9 +41,9 @@ install(
 # Python scripts
 install(
   PROGRAMS 
-  scripts/yolo.py
   scripts/img_proc.py
   scripts/arduino_comm.py
+  scripts/move_client.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
