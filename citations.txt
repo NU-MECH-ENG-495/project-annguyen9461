@@ -1,0 +1,2 @@
+[1]https://github.com/ME495-EmbeddedSystems/finalproject-whack-a-mole/blob/477fc2b952eb298aaf4d7fb3ebb5a8f36042ce2c/whack_a_mole/whack_a_mole/serial_comm.py
+Accessed 20/03/2025. Templetate to talk to Arduino with ROS2 node.
