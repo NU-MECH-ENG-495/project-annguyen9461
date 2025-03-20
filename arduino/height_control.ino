@@ -4,7 +4,7 @@
 // Define pins and constants
 const uint8_t STEP_PIN = 2;
 const uint8_t DIRECTION_PIN = 4;
-const uint32_t STEPS_PER_COMMAND = 51200;  // Number of full steps per command
+const uint32_t STEPS_PER_COMMAND = 51200/16;  // Number of full steps per command
 const uint16_t STEP_INTERVAL_MICROS = 100; // Delay between each step toggle (microseconds)
 const uint8_t RUN_CURRENT_PERCENT = 100;
 
@@ -15,6 +15,7 @@ TMC2209 stepper_driver;
 volatile long stepsRemaining = 0;    // Total toggles remaining (each full step requires 2 toggles)
 unsigned long lastStepTime = 0;
 bool paused = false;                 // Pause state flag
+bool movementStarted = false;        // Flag to track if we're in a movement
 
 void setup() {
   Serial.begin(115200);
@@ -38,12 +39,20 @@ void loop() {
     char input = Serial.read();
     
     if (input == 'u') {
-      Serial.println("Key 1 pressed: Moving Up.");
+      if (paused) {
+        paused = false;
+        Serial.println("Auto-unpaused due to movement command.");
+      }
+      Serial.println("Moving Up");
       digitalWrite(DIRECTION_PIN, HIGH);  // Set direction for "up" (adjust if needed)
       stepsRemaining = STEPS_PER_COMMAND * 2; // Each full step requires 2 toggles
     } 
     else if (input == 'd') {
-      Serial.println("Key 2 pressed: Moving Down.");
+      if (paused) {
+        paused = false;
+        Serial.println("Auto-unpaused due to movement command.");
+      }
+      Serial.println("Moving Down");
       digitalWrite(DIRECTION_PIN, LOW);   // Set direction for "down"
       stepsRemaining = STEPS_PER_COMMAND * 2;
     } 
@@ -69,5 +78,11 @@ void loop() {
       lastStepTime = currentTime;
       stepsRemaining--;  // Count one toggle
     }
+  }
+
+  // Check if movement just completed
+  if (movementStarted && stepsRemaining == 0) {
+    movementStarted = false;
+    Serial.println("Movement Complete");
   }
 }

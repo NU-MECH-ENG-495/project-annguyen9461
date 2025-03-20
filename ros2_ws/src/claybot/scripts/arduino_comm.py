@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 
+
 import rclpy
-from claybot_interfaces.srv import SendMoveCommand
 from rclpy.node import Node
 import serial
 import serial.tools.list_ports as list_ports
 from std_msgs.msg import String
 from std_srvs.srv import Empty
+from claybot_interfaces.srv import SendMoveCommand
 import sys
+import time
 
 arduino_comm = serial.Serial()
 
@@ -72,7 +74,7 @@ class InoComm(Node):
             self.get_logger().error("No valid string option sent. Send u (up), d (down), or p (pause).")
             return response
 
-        serial_val = self.read_serial_data()
+        serial_val = self.read_serial_data_with_timeout()
         self.get_logger().info('Arduino finished changing height, moving on to next step')
         
         # Always return the response to complete the service call
@@ -80,13 +82,46 @@ class InoComm(Node):
 
     def write_serial_data(self, msg: String):
         try:
-            msg = str(msg.data)
+            msg_str = str(msg.data)
             self.get_logger().info(f'Writing to serial: {msg_str}')
             arduino_comm.write(msg_str.encode("utf-8"))
             # Flush to ensure data is sent immediately
             arduino_comm.flush()
         except Exception as e:
-            self.get_logger().error('Cannot write serial data!: {e}')
+            self.get_logger().error(f'Cannot write serial data!: {e}')
+
+    def read_serial_data_with_timeout(self, timeout=5.0):
+        """
+        Read serial data from the Arduino device with a timeout.
+        
+        :param timeout: Maximum time (in seconds) to wait for a response
+        :return: A message containing the valid serial data or None if timeout
+        """
+        try:
+            start_time = time.time()
+            valid_responses = ["Moving Up", "Moving Down", "Paused", "Resumed", "Auto-unpaused"]
+            
+            while (time.time() - start_time) < timeout:
+                if arduino_comm.in_waiting > 0:
+                    data = arduino_comm.readline().decode('utf-8').rstrip('\n').rstrip('\r')
+                    self.get_logger().info(f'Received data: {data}')
+                    
+                    # Check if we have any valid response
+                    for response in valid_responses:
+                        if response in data:
+                            msg = String()
+                            msg.data = data
+                            return msg
+                
+                # Small sleep to prevent CPU hogging
+                time.sleep(0.1)
+            
+            self.get_logger().warn('Timeout waiting for Arduino response')
+            return None
+        except Exception as e:
+            self.get_logger().error(f'Exception: {e}')
+            self.get_logger().error('Cannot read serial data!')
+            return None
 
     def read_serial_data(self):
         """
@@ -104,7 +139,7 @@ class InoComm(Node):
             msg = String()
             msg.data = arduino_comm.readline().decode('utf-8').rstrip('\n').rstrip('\r')
             self.get_logger().info(f'{type(msg.data)}')
-            while msg.data != 'p' and msg.data != '1' and msg.data != '2' and msg.data != '3':
+            while msg.data != 'p':
                 msg.data = arduino_comm.readline().decode('utf-8').rstrip('\n').rstrip('\r')
                 self.get_logger().info(f'Received data from: {msg.data}')
             return msg
