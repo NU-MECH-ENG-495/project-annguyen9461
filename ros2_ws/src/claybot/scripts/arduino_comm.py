@@ -55,6 +55,10 @@ class InoComm(Node):
         self.move_srv = self.create_service(SendMoveCommand, 'send_move_command', self.move_callback)
 
     def move_callback(self, request, response):
+        """
+        From terminal:
+        ros2 service call /send_move_command claybot_interfaces/srv/SendMoveCommand "{command: {data: 'u'}}"
+        """
         if(request.command.data == 'u'):
             msg = String()
             msg.data = 'u'
@@ -75,7 +79,7 @@ class InoComm(Node):
             return response
 
         serial_val = self.read_serial_data_with_timeout()
-        self.get_logger().info('Arduino finished changing height, moving on to next step')
+        self.get_logger().info('Movement Done')
         
         # Always return the response to complete the service call
         return response
@@ -122,31 +126,6 @@ class InoComm(Node):
             self.get_logger().error(f'Exception: {e}')
             self.get_logger().error('Cannot read serial data!')
             return None
-
-    def read_serial_data(self):
-        """
-        Read serial data from the Arduino device.
-
-        This function continuously reads from the serial port
-        until valid data (`0`, `1`, `2`, or `3`) is received.
-
-        :return: A message containing the valid serial data read from the device.
-        :rtype: `String`
-
-        :raises Exception: If there is an error reading data from the serial port.
-        """
-        try:
-            msg = String()
-            msg.data = arduino_comm.readline().decode('utf-8').rstrip('\n').rstrip('\r')
-            self.get_logger().info(f'{type(msg.data)}')
-            while msg.data != 'p':
-                msg.data = arduino_comm.readline().decode('utf-8').rstrip('\n').rstrip('\r')
-                self.get_logger().info(f'Received data from: {msg.data}')
-            return msg
-        except Exception as e:
-            self.get_logger().error(f'Exception{e}')
-            self.get_logger().error('Cannot read serial data!')
-            return
 
     def connect_serial_port(self, serial_port, baud_rate):
         """
