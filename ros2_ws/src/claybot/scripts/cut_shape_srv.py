@@ -3,7 +3,7 @@
 import rclpy
 from rclpy.node import Node
 from claybot_interfaces.srv import SendMoveCommand, SendTurnCommand, CutShape
-from claybot_interfaces.msg import RobotState
+from claybot_interfaces.msg import RobotState, SetPosition
 from std_msgs.msg import String
 import time
 
@@ -22,29 +22,54 @@ class CutShapeService(Node):
         
         # Create client for move UP/DOWN command
         self.move_client = self.create_client(SendMoveCommand, 'send_move_command')
-        self.turn_client = self.create_client(SendTurnCommand, 'send_turn_command')
+        self.set_position_pub = self.create_publisher(SetPosition, 'set_position', 10)
+
+    def publish_turn(self, degrees):
+        # Clamp degrees to [0, 360)
+        while degrees < 0:
+            degrees += 360
+        while degrees >= 360:
+            degrees -= 360
+
+        # Convert to position (0–4096)
+        position = int((degrees / 360.0) * 4096)
+
+        # Publish to /set_position topic
+        msg = SetPosition()
+        msg.id = 1  # Update with actual motor ID!
+        msg.position = position
+        self.set_position_pub.publish(msg)
+        self.get_logger().info(f"Sent turn command: {degrees}° → pos {position}")
 
     def cut_shape_callback(self, request, response):
         self.get_logger().info(f'Cutting shape: {request.shape_type}')
         
-        # Call other services as needed
         if request.shape_type == 'SQUARE':
-            for _ in range(4):
+            num_turns = 4
+            shape_degree = 360 / num_turns
+            for i in range(num_turns):
                 self.call_move_vertical_service("d")
                 self.call_move_vertical_service("u")
-                self.call_turn_service(90.0)
-
+                turn_degree = shape_degree * i
+                self.publish_turn(turn_degree)
+        
         elif request.shape_type == 'TRIANGLE':
-            for _ in range(3):
+            num_turns = 3
+            shape_degree = 360 / num_turns
+            for i in range(num_turns):
                 self.call_move_vertical_service("d")
                 self.call_move_vertical_service("u")
-                self.call_turn_service(120.0)
+                turn_degree = shape_degree * i
+                self.publish_turn(turn_degree)
 
         elif request.shape_type == 'HEXAGON':
-            for _ in range(6):
+            num_turns = 6
+            shape_degree = 360 / num_turns
+            for i in range(num_turns):
                 self.call_move_vertical_service("d")
                 self.call_move_vertical_service("u")
-                self.call_turn_service(60.0)
+                turn_degree = shape_degree * i
+                self.publish_turn(turn_degree)
 
         else:
             self.get_logger().error(f"Unknown shape type: {request.shape_type}")
@@ -87,25 +112,6 @@ class CutShapeService(Node):
         self.get_logger().error(f'Service call timeout ({timeout} seconds)')
         return False
 
-    def call_turn_service(self, angle_deg):
-        # self.get_logger().info(f'[Placeholder] Turning robot by {angle_deg} degrees.')
-        # time.sleep(0.5)  # Simulate a brief delay
-
-        # Create and send the request
-        request = SendTurnCommand.Request()
-        request.degrees = angle_deg
-        
-        # Wait for service to be available
-        if not self.move_client.wait_for_service(timeout_sec=1.0):
-            self.get_logger().error('Move service not available')
-            return False
-            
-        # Call the service
-        future = self.move_client.call_async(request)
-        rclpy.spin_until_future_complete(self, future)
-        
-        return future.result()
-        
 def main(args=None):
     rclpy.init(args=args)
     node = CutShapeService()

@@ -23,6 +23,9 @@
     <node pkg='claybot' exec='move_updown_srv.py' name='move_updown_srv'>
     </node>
 
+    <node pkg="claybot" exec="control_turn" name="control_turn_node"/>
+
+
     <!-- <node pkg='claybot' exec='img_proc' name='img_proc' output='screen'>
         <remap from='rgb_image' to='/camera/camera/color/image_raw' />
         <remap from='depth_image' to='/camera/camera/aligned_depth_to_color/image_raw' />

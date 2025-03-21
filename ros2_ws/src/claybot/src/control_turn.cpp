@@ -18,6 +18,7 @@ uint8_t dxl_error = 0;
 uint32_t goal_position = 0;
 int dxl_comm_result = COMM_TX_FAIL;
 
+const double TICKS_PER_DEGREE = 4096.0 / 360.0;
 
 ControlTurn::ControlTurn() : Node("control_turn_node")
 /*
@@ -156,14 +157,16 @@ void ControlTurn::initDynamixels()
   }
 }
 
-uint32_t degreesToPosition360(float degrees) {
-    // Normalize degrees to [0, 360)
-    while (degrees < 0) degrees += 360.0f;
-    while (degrees >= 360.0f) degrees -= 360.0f;
+uint32_t degreesToPosition(int degrees) {
+    float raw = (degrees / 360.0f) * 4096.0f;
 
-    // Map 0–360° → 0–4096
-    return static_cast<uint32_t>((degrees / 360.0f) * 4096.0f);
+    // Clamp between 0 and 4095
+    if (raw < 0) raw = 0;
+    if (raw > 4095) raw = 4095;
+
+    return static_cast<uint32_t>(raw);
 }
+
 
 
 int main(int argc, char * argv[]) {
