@@ -72,10 +72,13 @@ class CutShapeService(Node):
             time.sleep(self.delay_after_down)
             self.call_move_vertical_service("u")
             time.sleep(self.delay_after_up)
-            turn_degree = shape_degree * i
+            turn_degree = shape_degree * (i + 1)
             self.publish_turn(turn_degree)
             time.sleep(self.delay_after_turn)
         
+        # return to 0° after the last cut
+        self.publish_turn(0)
+
         # Set response
         response.success = True
         response.message = f"Successfully cut {request.shape_type}"
