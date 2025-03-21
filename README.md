@@ -43,3 +43,9 @@ This project automates the process of cutting a **2D circle** into a predefined 
 - Develop **cutting path generation** based on detected contours.  
 - Integrate **linear actuator control** for the fixed knife.  
 - Test **table rotation and quadrant-based cutting**.  
+
+## Milestones:
+
+
+https://github.com/user-attachments/assets/f310b6c5-3d6d-438b-907b-83f8c7117c7d
+
