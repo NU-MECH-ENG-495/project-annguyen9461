@@ -1,0 +1,60 @@
+[0.005s] Invoking command in '/home/annguyen/ros2_ws/src/claybot/build/claybot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/annguyen/ros2_ws/src/claybot -DBUILD_DOCUMENTATION=ON -DCMAKE_INSTALL_PREFIX=/home/annguyen/ros2_ws/src/claybot/install/claybot
+[0.050s] -- The C compiler identification is GNU 13.2.0
+[0.106s] -- The CXX compiler identification is GNU 13.2.0
+[0.127s] -- Detecting C compiler ABI info
+[0.245s] -- Detecting C compiler ABI info - done
+[0.252s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.252s] -- Detecting C compile features
+[0.253s] -- Detecting C compile features - done
+[0.264s] -- Detecting CXX compiler ABI info
+[0.386s] -- Detecting CXX compiler ABI info - done
+[0.397s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.398s] -- Detecting CXX compile features
+[0.398s] -- Detecting CXX compile features - done
+[0.402s] -- Found ament_cmake: 2.5.2 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.518s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[0.595s] -- Found rclcpp: 28.1.5 (/opt/ros/jazzy/share/rclcpp/cmake)
+[0.621s] -- Found rosidl_generator_c: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[0.630s] -- Found rosidl_generator_cpp: 4.6.4 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[0.640s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.650s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.696s] -- Found rmw_implementation_cmake: 7.3.1 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[0.698s] -- Found rmw_fastrtps_cpp: 8.4.1 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[0.773s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[0.794s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[0.818s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.860s] -- Found std_msgs: 5.3.5 (/opt/ros/jazzy/share/std_msgs/cmake)
+[0.868s] -- Found sensor_msgs: 5.3.5 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[0.891s] -- Found cv_bridge: 4.1.0 (/opt/ros/jazzy/share/cv_bridge/cmake)
+[0.899s] -- Found dynamixel_sdk: 3.7.40 (/opt/ros/jazzy/share/dynamixel_sdk/cmake)
+[0.900s] -- Found claybot_interfaces: 0.0.0 (/home/annguyen/ros2_ws/install/claybot_interfaces/share/claybot_interfaces/cmake)
+[0.924s] -- Found Doxygen: /usr/bin/doxygen (found version "1.9.8") found components: doxygen dot 
+[0.997s] -- Found ament_lint_auto: 0.17.1 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.067s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.067s] -- Configured cppcheck include dirs: /home/annguyen/ros2_ws/src/claybot/include
+[1.067s] -- Configured cppcheck exclude dirs and/or files: 
+[1.068s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.068s] -- Configured 'flake8' exclude dirs and/or files: 
+[1.069s] -- Added test 'lint_cmake' to check CMake code style
+[1.069s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.071s] -- Added test 'uncrustify' to check C / C++ code style
+[1.071s] -- Configured uncrustify additional arguments: 
+[1.071s] -- Added test 'xmllint' to check XML markup files
+[1.072s] -- Configuring done (1.1s)
+[1.078s] -- Generating done (0.0s)
+[1.079s] -- Build files have been written to: /home/annguyen/ros2_ws/src/claybot/build/claybot
+[1.086s] Invoked command in '/home/annguyen/ros2_ws/src/claybot/build/claybot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake /home/annguyen/ros2_ws/src/claybot -DBUILD_DOCUMENTATION=ON -DCMAKE_INSTALL_PREFIX=/home/annguyen/ros2_ws/src/claybot/install/claybot
+[1.087s] Invoking command in '/home/annguyen/ros2_ws/src/claybot/build/claybot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/annguyen/ros2_ws/src/claybot/build/claybot -- -j32 -l32
+[1.135s] [ 50%] [32mBuilding CXX object CMakeFiles/control_turn.dir/src/control_turn.cpp.o[0m
+[5.605s] [100%] [32m[1mLinking CXX executable control_turn[0m
+[5.748s] [100%] Built target control_turn
+[5.759s] Invoked command in '/home/annguyen/ros2_ws/src/claybot/build/claybot' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --build /home/annguyen/ros2_ws/src/claybot/build/claybot -- -j32 -l32
+[5.813s] Invoking command in '/home/annguyen/ros2_ws/src/claybot/build/claybot': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/annguyen/ros2_ws/src/claybot/build/claybot
+[5.825s] -- Install configuration: ""
+[5.825s] [31mCMake Error at cmake_install.cmake:46 (file):
+[5.825s]   file INSTALL cannot find
+[5.825s]   "/home/annguyen/ros2_ws/src/claybot/build/claybot/html": No such file or
+[5.825s]   directory.
+[5.825s] 
+[5.825s] [0m
+[5.826s] Invoked command in '/home/annguyen/ros2_ws/src/claybot/build/claybot' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy /usr/bin/cmake --install /home/annguyen/ros2_ws/src/claybot/build/claybot

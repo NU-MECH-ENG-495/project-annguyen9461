@@ -1,0 +1,82 @@
+# Doxyfile.in template for ROS2 packages
+# Basic configuration adapted for ROS2 projects
+
+# Project settings
+PROJECT_NAME           = "claybot"
+PROJECT_NUMBER         = ""
+PROJECT_BRIEF          = "Package for controlling Claybot"
+OUTPUT_DIRECTORY       = "/home/annguyen/ros2_ws/src/claybot/build/claybot"
+
+# Input sources
+INPUT                  = "/home/annguyen/ros2_ws/src/claybot/include" \
+                         "/home/annguyen/ros2_ws/src/claybot/src"
+FILE_PATTERNS          = *.h \
+                         *.hpp \
+                         *.cpp \
+                         *.c \
+                         *.cc \
+                         *.py
+RECURSIVE              = YES
+EXCLUDE                = 
+
+# Output settings
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+GENERATE_LATEX         = NO
+
+# Diagrams and graphs
+HAVE_DOT               = YES
+UML_LOOK               = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES
+
+# Extraction settings
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_PACKAGE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+# Documentation style
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = YES
+MULTILINE_CPP_IS_BRIEF = NO
+TAB_SIZE               = 2
+
+# Source code display
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+STRIP_CODE_COMMENTS    = YES
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+REFERENCES_LINK_SOURCE = YES
+USE_MDFILE_AS_MAINPAGE = /home/annguyen/ros2_ws/src/claybot/README.md
+
+# Directory structure
+FULL_PATH_NAMES        = YES
+STRIP_FROM_PATH        = "/home/annguyen/ros2_ws/src/claybot"
+STRIP_FROM_INC_PATH    = "/home/annguyen/ros2_ws/src/claybot/include"
+
+# Special documentation blocks
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+BUILTIN_STL_SUPPORT    = YES
+
+# Warnings and progress
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = YES
+WARN_IF_DOC_ERROR      = YES
+
+# Header and footer appearance
+HTML_HEADER            =
+HTML_FOOTER            =
+HTML_STYLESHEET        =
+HTML_EXTRA_STYLESHEET  =
+
+# Special options for ROS2 projects
+ALIASES                += "action=\xrefitem actions \"Action\" \"Actions\""
+ALIASES                += "service=\xrefitem services \"Service\" \"Services\""
+ALIASES                += "topic=\xrefitem topics \"Topic\" \"Topics\""
+ALIASES                += "param=\xrefitem params \"Parameter\" \"Parameters\""

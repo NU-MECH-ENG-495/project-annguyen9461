@@ -1,0 +1,1 @@
+ament_cmake_python;rclcpp;std_msgs;python3;rclpy;claybot_interfaces;sensor_msgs;cv_bridge;opencv;ultralytics;launch;launch_ros;ament_lint_auto;ament_lint_common

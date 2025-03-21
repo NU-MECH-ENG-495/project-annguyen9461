@@ -1,0 +1,5 @@
+<map id="ControlTurn::initDynamixels" name="ControlTurn::initDynamixels">
+<area shape="rect" id="Node000001" title="Initialize the Dynamixel motors." alt="" coords="232,5,435,31"/>
+<area shape="rect" id="Node000002" href="$classControlTurn.html#a7793b4f6b7a5780704d4335d8825ed11" title="Constructor for the ControlTurn class." alt="" coords="5,5,184,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,21,184,21,184,15,218,15"/>
+</map>

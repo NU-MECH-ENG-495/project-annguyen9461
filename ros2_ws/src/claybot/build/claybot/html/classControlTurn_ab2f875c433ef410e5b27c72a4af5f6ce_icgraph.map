@@ -1,0 +1,5 @@
+<map id="ControlTurn::gradual_transition" name="ControlTurn::gradual_transition">
+<area shape="rect" id="Node000001" title="Implement gradual position transition for smoother movement." alt="" coords="232,5,385,45"/>
+<area shape="rect" id="Node000002" href="$classControlTurn.html#a7793b4f6b7a5780704d4335d8825ed11" title="Constructor for the ControlTurn class." alt="" coords="5,13,184,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,28,184,28,184,23,218,23"/>
+</map>

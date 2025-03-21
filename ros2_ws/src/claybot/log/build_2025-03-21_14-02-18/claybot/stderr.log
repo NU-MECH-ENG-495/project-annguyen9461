@@ -1,0 +1,6 @@
+[31mCMake Error at cmake_install.cmake:46 (file):
+  file INSTALL cannot find
+  "/home/annguyen/ros2_ws/src/claybot/build/claybot/html": No such file or
+  directory.
+
+[0m

@@ -1,0 +1,11 @@
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/uninstall.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/claybot_uninstall.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/docs.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/control_turn.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/test.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/edit_cache.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/rebuild_cache.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/list_install_components.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/install.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/install/local.dir
+/home/annguyen/ros2_ws/src/claybot/build/claybot/CMakeFiles/install/strip.dir
