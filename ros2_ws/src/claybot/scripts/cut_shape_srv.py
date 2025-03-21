@@ -88,23 +88,24 @@ class CutShapeService(Node):
         return False
 
     def call_turn_service(self, angle_deg):
-        # # Create and send the request
-        # request = SendTurnCommand.Request()
-        # request.degrees = angle_deg
-        
-        # # Wait for service to be available
-        # if not self.move_client.wait_for_service(timeout_sec=1.0):
-        #     self.get_logger().error('Move service not available')
-        #     return False
-            
-        # # Call the service
-        # future = self.move_client.call_async(request)
-        # rclpy.spin_until_future_complete(self, future)
-        
-        # return future.result()
-        self.get_logger().info(f'[Placeholder] Turning robot by {angle_deg} degrees.')
-        time.sleep(0.5)  # Simulate a brief delay
+        # self.get_logger().info(f'[Placeholder] Turning robot by {angle_deg} degrees.')
+        # time.sleep(0.5)  # Simulate a brief delay
 
+        # Create and send the request
+        request = SendTurnCommand.Request()
+        request.degrees = angle_deg
+        
+        # Wait for service to be available
+        if not self.move_client.wait_for_service(timeout_sec=1.0):
+            self.get_logger().error('Move service not available')
+            return False
+            
+        # Call the service
+        future = self.move_client.call_async(request)
+        rclpy.spin_until_future_complete(self, future)
+        
+        return future.result()
+        
 def main(args=None):
     rclpy.init(args=args)
     node = CutShapeService()

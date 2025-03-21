@@ -33,4 +33,6 @@ private:
     int present_position;
 };
 
+uint32_t degreesToPosition(float degrees);
+
 #endif  // CONTROL_TURN_HPP_

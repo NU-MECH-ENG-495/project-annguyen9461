@@ -20,6 +20,10 @@ int dxl_comm_result = COMM_TX_FAIL;
 
 
 ControlTurn::ControlTurn() : Node("control_turn_node")
+/*
+To test manual turn
+ros2 topic pub --once /set_position claybot_interfaces/msg/SetPosition "{id: 1, position: 512}"
+*/
 {
     RCLCPP_INFO(this->get_logger(), "Run control_turn_node node");
 
@@ -45,7 +49,10 @@ ControlTurn::ControlTurn() : Node("control_turn_node")
 
             // Position Value of X series is 4 byte data.
             // For AX & MX(1.0) use 2 byte data(uint16_t) for the Position Value.
-            uint32_t goal_position = (unsigned int)msg->position;  // Convert int32 -> uint32
+            // uint32_t goal_position = (unsigned int)msg->position;  // Convert int32 -> uint32
+
+            // Convert degrees to goal position
+            uint32_t goal_position = degreesToPosition(static_cast<float>(msg->position));
 
             // Write Goal Position (length : 4 bytes)
             // When writing 2 byte data to AX / MX(1.0), use write2ByteTxRx() instead.
@@ -148,6 +155,16 @@ void ControlTurn::initDynamixels()
     RCLCPP_INFO(rclcpp::get_logger("control_turn_node"), "Succeeded to enable torque.");
   }
 }
+
+uint32_t degreesToPosition360(float degrees) {
+    // Normalize degrees to [0, 360)
+    while (degrees < 0) degrees += 360.0f;
+    while (degrees >= 360.0f) degrees -= 360.0f;
+
+    // Map 0–360° → 0–4096
+    return static_cast<uint32_t>((degrees / 360.0f) * 4096.0f);
+}
+
 
 int main(int argc, char * argv[]) {
     rclcpp::init(argc, argv);
