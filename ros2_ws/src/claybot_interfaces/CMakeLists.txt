@@ -19,6 +19,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "srv/SendMoveCommand.srv"
   "srv/SendTurnCommand.srv"
   "srv/CutShape.srv"
+  "msg/SetPosition.msg"
+  "srv/GetPosition.srv"
   DEPENDENCIES std_msgs
 )
 
