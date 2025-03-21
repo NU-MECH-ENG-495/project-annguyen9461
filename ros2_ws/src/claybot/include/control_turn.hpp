@@ -11,6 +11,8 @@
 #include "claybot_interfaces/msg/set_position.hpp"
 #include "claybot_interfaces/srv/get_position.hpp"
 
+#include <thread>    // Add this for std::this_thread
+
 class ControlTurn : public rclcpp::Node 
 {
 public:
@@ -26,11 +28,14 @@ private:
     dynamixel::GroupSyncWrite* groupSyncWrite;
 
     void initDynamixels();
-
+    void update_present_positions();
+    void gradual_transition(int target_position);
+    
     rclcpp::Subscription<SetPosition>::SharedPtr set_position_subscriber_;
     rclcpp::Service<GetPosition>::SharedPtr get_position_server_;
 
     int present_position;
+    int present_positions[2];   // 1-indexed motors
 };
 
 #endif  // CONTROL_TURN_HPP_
