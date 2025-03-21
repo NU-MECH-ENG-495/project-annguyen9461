@@ -4,7 +4,7 @@
 // Define pins and constants
 const uint8_t STEP_PIN = 2;
 const uint8_t DIRECTION_PIN = 4;
-const uint32_t STEPS_PER_COMMAND = 51200/16;  // Number of full steps per command
+const uint32_t STEPS_PER_COMMAND = 51200/4;  // Number of full steps per command
 const uint16_t STEP_INTERVAL_MICROS = 100; // Delay between each step toggle (microseconds)
 const uint8_t RUN_CURRENT_PERCENT = 100;
 
