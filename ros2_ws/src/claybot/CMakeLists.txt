@@ -22,13 +22,6 @@ include_directories(
   include
 )
 
-add_executable(vision src/vision.cpp)
-target_include_directories(vision PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include/${PROJECT_NAME}>)
-target_compile_features(vision PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
-ament_target_dependencies(vision rclcpp std_msgs)  # Ensure ROS2 dependencies
-
 add_executable(control_turn src/control_turn.cpp)
 ament_target_dependencies(control_turn
   claybot_interfaces
@@ -42,9 +35,6 @@ ament_target_dependencies(control_turn
 # ament_target_dependencies(talker rclcpp std_msgs)
 
 # Install executables
-install(TARGETS 
-  vision 
-  DESTINATION lib/${PROJECT_NAME})
 install(TARGETS 
   control_turn
   DESTINATION lib/${PROJECT_NAME})

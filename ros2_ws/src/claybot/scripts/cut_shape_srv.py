@@ -24,6 +24,13 @@ class CutShapeService(Node):
         self.move_client = self.create_client(SendMoveCommand, 'send_move_command')
         self.set_position_pub = self.create_publisher(SetPosition, 'set_position', 10)
 
+        # Define delay times (in seconds)
+        self.delay_after_down = 0.1  # Pause after moving down
+        self.delay_after_up = 1.0    # Pause after moving up, before turning
+        self.delay_after_turn = 0.5  # Pause after turning
+        
+        self.get_logger().info('Cut Shape Service initialized')
+
     def publish_turn(self, degrees):
         # Clamp degrees to [0, 360)
         while degrees < 0:
@@ -44,39 +51,31 @@ class CutShapeService(Node):
     def cut_shape_callback(self, request, response):
         self.get_logger().info(f'Cutting shape: {request.shape_type}')
         
-        if request.shape_type == 'SQUARE':
+        num_turns = 1
+        shape_degree = 360 / num_turns
+
+        if request.shape_type == 'squ':
             num_turns = 4
-            shape_degree = 360 / num_turns
-            for i in range(num_turns):
-                self.call_move_vertical_service("d")
-                self.call_move_vertical_service("u")
-                turn_degree = shape_degree * i
-                self.publish_turn(turn_degree)
-        
-        elif request.shape_type == 'TRIANGLE':
+        elif request.shape_type == 'tri':
             num_turns = 3
-            shape_degree = 360 / num_turns
-            for i in range(num_turns):
-                self.call_move_vertical_service("d")
-                self.call_move_vertical_service("u")
-                turn_degree = shape_degree * i
-                self.publish_turn(turn_degree)
-
-        elif request.shape_type == 'HEXAGON':
+        elif request.shape_type == 'hex':
             num_turns = 6
-            shape_degree = 360 / num_turns
-            for i in range(num_turns):
-                self.call_move_vertical_service("d")
-                self.call_move_vertical_service("u")
-                turn_degree = shape_degree * i
-                self.publish_turn(turn_degree)
-
         else:
             self.get_logger().error(f"Unknown shape type: {request.shape_type}")
             response.success = False
             response.message = f"Unknown shape type: {request.shape_type}"
             return response
-            
+        
+        shape_degree = 360 / num_turns
+        for i in range(num_turns):
+            self.call_move_vertical_service("d")
+            time.sleep(self.delay_after_down)
+            self.call_move_vertical_service("u")
+            time.sleep(self.delay_after_up)
+            turn_degree = shape_degree * i
+            self.publish_turn(turn_degree)
+            time.sleep(self.delay_after_turn)
+        
         # Set response
         response.success = True
         response.message = f"Successfully cut {request.shape_type}"
