@@ -1,0 +1,6 @@
+# Request
+string shape_type
+---
+# Response
+bool success
+string message

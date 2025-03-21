@@ -23,6 +23,8 @@ class InoComm(Node):
 
     def __init__(self):
         """
+        ros2 service call /send_move_command claybot_interfaces/srv/SendMoveCommand "{command: {data: 'u'}}"
+
         Initialize the InoComm node, sets up serial comm, and creates ROS2 service and clients.
 
         :arg None: No arguments are passed during initialization.

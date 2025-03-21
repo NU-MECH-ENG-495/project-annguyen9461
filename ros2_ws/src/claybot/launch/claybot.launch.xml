@@ -1,5 +1,5 @@
 <launch>    
-    <include file='$(find-pkg-share realsense2_camera)/launch/rs_launch.py' >
+    <!-- <include file='$(find-pkg-share realsense2_camera)/launch/rs_launch.py' >
         <arg name='depth_module.profile' value='1280x720x30' />
         <arg name='rgb_camera.profile' value='1280x720x30' />
         <arg name='enable_sync' value='true' />
@@ -9,12 +9,18 @@
         <arg name='enable_infra2' value='false' />
         <arg name='enable_gyro' value='false' />
         <arg name='enable_accel' value='false' />
-    </include>
+    </include> -->
     
-    <node pkg='rviz2' exec='rviz2'/>
+    <!-- <node pkg='rviz2' exec='rviz2'/> -->
 
-    <node pkg='claybot' exec='yolo.py' name='yolo'>
+    <!-- <node pkg='claybot' exec='yolo.py' name='yolo'>
         <remap from='image' to='/camera/camera/color/image_raw' />
+    </node> -->
+
+    <node pkg='claybot' exec='cut_shape_srv.py' name='cut_shape'>
+    </node>
+
+    <node pkg='claybot' exec='move_updown_srv.py' name='move_updown_srv'>
     </node>
 
     <!-- <node pkg='claybot' exec='img_proc' name='img_proc' output='screen'>

@@ -14,8 +14,11 @@ find_package(rosidl_default_runtime REQUIRED)
 find_package(std_msgs REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
-  "srv/SendMoveCommand.srv"
   "msg/Move.msg"
+  "msg/RobotState.msg"
+  "srv/SendMoveCommand.srv"
+  "srv/SendTurnCommand.srv"
+  "srv/CutShape.srv"
   DEPENDENCIES std_msgs
 )
 

@@ -41,9 +41,10 @@ install(
 # Python scripts
 install(
   PROGRAMS 
-  scripts/img_proc.py
-  scripts/arduino_comm.py
-  scripts/move_client.py
+  scripts/cut_shape_srv.py
+  scripts/move_updown_srv.py
+  scripts/move_updown_cli.py
+  scripts/cut_shape_srv.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
